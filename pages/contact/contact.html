@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contact nous</ion-title>
+    <ion-buttons end style="margin-right: 5%">
+      <button ion-button >
+        <ion-icon name="ios-cart-outline" style="position: relative;font-weight: bold;font-size: 2em;" color="black">
+          <ion-badge style="position:absolute;font-weight: bold;top:-5px;left:9px;font-size: 9px" color="danger">{{cartNumber}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="contact">
+
+  <div class="module">
+    <header src="/assets/img/contact/greek.jpg">
+      <h2> Senoble </h2><br/>
+      <h6>11 rue des petits champs, 75001 Paris </h6>
+    </header>
+  </div>
+  <div style="padding-left: 3%;padding-right: 3%">
+    <h4 class="colorgrey"> Qui sommes-nous ? </h4><br/>
+    <div class="colorgrey" style="text-align: justify;font-size: 0.9em">
+      Notre société a un savoir-faire historique qu’elle adapte sans cesse à l’évolution des marchés nationaux
+      et internationaux, en gardant un capital à majorité familiale.
+      Nous sommes moteurs de croissance pour nos clients en nous appuyant sur la qualité de nos produits. Nous
+      cherchons à optimiser les outils industriels et la valeur ajoutée par l’innovation, dans un souci de
+      pérennité. Créativité et réactivité animent nos équipes.
+    </div><br/>
+    <div class="colorgrey" style="font-size: 1.2em"> Horaire </div>
+    <div class="colorsmoke">
+      <div id="list2">
+        <ol>
+          <li><p><em>Lundi</em>08:00 - 16:00</p></li>
+          <li><p><em>Mardi</em>08:00 - 12:00 / 16:00 - 20:00</p></li>
+          <li><p><em>Mercredi</em>08:00 - 16:00</p></li>
+          <li><p><em>Jeudi</em>08:00 - 16:00</p></li>
+          <li><p><em>Vendredi</em>08:00 - 16:00</p></li>
+          <li><p><em>Samedi</em>08:00 - 16:00</p></li>
+        </ol>
+      </div>
+    </div>
+    <div class="colorgrey" style="font-size: 1.2em">Contactez nous !</div>
+    <div class="colorsmoke">
+      <p class="colorgrey"><img src="/assets/img/contact/tel.png"> +330196676447</p>
+      <p class="colorgrey"><img src="/assets/img/contact/map.png" (click)="goMap()">11 rue des petits champs, 75001 Paris
+      </p>
+    </div>
+    <div>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+        <div style="border: 1px solid #ddd;" [ngClass]="contactForm.controls['subject']['status']=='INVALID'&&submited?'showInputError':'inputClass'">
+          <ion-input formControlName="subject" type="text" placeholder="Sujet" style="margin-left: 5px" ></ion-input>
+        </div>
+        <div style="border: 1px solid #ddd;height: 150px" [ngClass]="contactForm.controls['description']['status']=='INVALID'&&submited?'showInputError':'inputClass'">
+          <ion-input formControlName="description" type="text" placeholder="Description" style="margin-left: 5px" ></ion-input>
+        </div>
+        <div style="width: 100%;text-align: center">
+          <button ion-button class="sendButton" type='submit'>
+            Envoyer
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+</ion-content>

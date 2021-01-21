@@ -1,0 +1,163 @@
+.shippingAddress {
+  font-family: Avenir Next W01\ 400, Avenir Next, Helvetica Neue, Helvetica, sans-serif;
+  background-color: #d1d2d3;
+  .shipPanel {
+    padding-top: .375em;
+    width: 97%;
+    height: 88%;
+    margin: auto;
+  }
+  .shipAutoPanel {
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    padding: .375em 1em;
+  }
+  .orPosition {
+    margin-top: .625em;
+    margin-bottom: .625em;
+  }
+  .orClass {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8125em;
+    text-align: center;
+    text-transform: uppercase
+  }
+  .orClass:after, .orClass:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed #ccc
+  }
+  .orClass:before {
+    margin-right: .625em
+  }
+  .orClass:after {
+    margin-left: .625em
+  }
+
+  .labelTitle {
+    position: absolute;
+    font-size: .5em;
+    top: 2px;
+    left: 10px;
+
+    opacity: 0;
+    -webkit-transform: translate3d(0, 6px, 0);
+    transform: translate3d(0, 6px, 0);
+    transition: transform 111ms ease-out, opacity 111ms ease-out, -webkit-transform 111ms ease-out;
+  }
+
+  .labelShowTitle {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .label-ios + ion-input .text-input {
+    margin-left: 0;
+  }
+  .text-input-md {
+    margin-left: 0;
+  }
+
+  .labelStyle {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.625em
+  }
+
+  .shipAdd {
+    display: block;
+    width: 100%;
+    height: 2.92308em;
+    line-height: 2.92308em;
+    margin-top: .46154em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: .8125em;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #818284;
+    border: none;
+    border-radius: 2px;
+    transition: background-color .3s ease;
+  }
+
+  .bdColor {
+    margin-top: 0;
+    background-color: #eee;
+  }
+
+  .inputClass {
+    margin-right: 1%;
+    padding-right: .75em;
+    padding-left: .75em;
+    width: 100%;
+    height: 2.625em;
+    font-size: 1em;
+    font-weight: 600;
+    color: #3d3d3d;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    transition: border-color .3s ease;
+    line-height: normal;
+  }
+
+  .showInputError {
+    padding-right: .75em;
+    padding-left: .75em;
+    width: 100%;
+    height: 2.625em;
+    font-size: 1em;
+    font-weight: 600;
+    color: #3d3d3d;
+    //border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    transition: border-color .3s ease;
+    border:1px solid #e85456!important
+  }
+
+  .addressPanel{
+    font-family: bt_mono-Medium,monospace;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .625em;
+    width: 100%;
+    margin-bottom: .625em;
+    font-size: .8125em;
+    border: 1px solid #707070;
+    background-color: #fff;
+    color: #404041;
+    text-decoration: none;
+  }
+
+  .shippingInfo{
+    padding-top: .53846em;
+    padding-bottom: .53846em;
+    padding-left: 1.07692em;
+    flex-grow: 1;
+  }
+
+  .addressPanel p{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .textClass{
+    font-family: Avenir Next,Helvetica Neue,Helvetica,sans-serif;
+    font-size: .91667em;
+    color: #707070;
+  }
+
+
+
+
+}

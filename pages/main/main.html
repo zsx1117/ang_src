@@ -1,0 +1,57 @@
+<ion-menu [content]="mycontent" class="page-main">
+  <ion-content class="bc no-scroll">
+    <ion-list inset>
+      <div style="height:18vh">
+      <ion-item class="heading-item">
+        <ion-avatar item-left>
+          <img class="icon-head" [src]="userInfo.pictureURL?userInfo.pictureURL : 'http://media.lemeilleurjobdete.com/uploads/3748/profil-1436023040.jpg'">
+        </ion-avatar>
+        <h2 class="greeting" [innerHTML]="'Bonjour '+userInfo.firstName"></h2>
+        <p class="message">Bienvenue</p>
+      </ion-item>
+      </div>
+
+      <button ion-item menuClose (click)="openPage(product)" class="buttonMain">
+        <ion-icon name="medical" color="vibrant" item-left></ion-icon>
+        Catégories
+      </button>
+
+      <button ion-item class="buttonMain">
+        <ion-icon name="ios-bookmark-outline" color="vibrant" item-left></ion-icon>
+        Mes Commandes
+      </button>
+
+      <button ion-item menuClose (click)="openPage(cart)" class="buttonMain">
+        <ion-icon name="ios-cart-outline" item-left></ion-icon>
+        Mon panier
+      </button>
+
+      <button ion-item class="buttonMain">
+        <ion-icon name="ios-color-wand" item-left></ion-icon>
+        Favoris
+      </button>
+
+      <button ion-item menuClose (click)="openPage(map)" class="buttonMain">
+        <ion-icon name="logo-wordpress" item-left></ion-icon>
+        Points de vente
+      </button>
+
+      <button ion-item menuClose (click)="openPage(contact)" class="buttonMain">
+        <ion-icon name="ios-document-outline" item-left></ion-icon>
+        Contactez nous
+      </button>
+
+      <button ion-item menuClose (click)="openPage(CGV)" class="buttonMain">
+        <ion-icon name="ios-settings" item-left></ion-icon>
+        CGV / CGU
+      </button>
+      <button ion-item  (click)="signOut()" class="buttonMain">
+        <ion-icon name="hand" item-left></ion-icon>
+        Sign Out
+      </button>
+    </ion-list>
+  </ion-content>>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage" swipeBackEnabled="false"></ion-nav>
+

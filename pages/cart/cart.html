@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cart</ion-title>
+    <ion-buttons end style="margin-right: 5%">
+      <button ion-button >
+        <ion-icon name="ios-cart-outline" style="position: relative;font-weight: bold;font-size: 2em;" color="black">
+          <ion-badge style="position:absolute;font-weight: bold;top:-5px;left:9px;font-size: 9px" color="danger">{{cartNumber}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cart">
+  <div class="cartPanel">
+    <div class="cartAutoPanel">
+      <div class="productPanel">
+        <div *ngIf="cartList.length == 0" class="emptyClass">
+          <p class="emptyContent">
+            Your cart is empty.
+          </p>
+        </div>
+        <ion-item class="itemClass" *ngFor="let product of cartList">
+          <div class="imageStyle">
+            <img [defaultImage]="defaultImage" [lazyLoad]="product.image" class="picture"/>
+          </div>
+          <div style="display: inline-block;width: 70%;vertical-align: top;margin-left: 3%">
+            <div style="float: left">
+              <h3 class="productName" [innerHTML]="product.name"></h3>
+              <p class="priceClass" [innerHTML]="product.price | currency:'EUR':true:'1.2-2'"></p>
+              <div class="operationButton">
+                <div class="panelAddMinus">
+                  <span (click)="minus(product)" class="minusAddClass">-</span>
+                  <span class="count" [innerHTML]="product.quantity"></span>
+                  <span (click)="add(product)" class="minusAddClass">+</span>
+                </div>
+                <p (click)="remove(product)" class="removeClass">
+                  Remove
+                </p>
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+      <div class="cartDetailPanel">
+        <div class="detailRow">
+          <span class="detailTitle">Subtotal </span>
+          <span class="detailInfo" [innerHTML]="getSubTotalFee()| currency:'EUR':true:'1.2-2'"></span>
+        </div>
+        <div class="detailRow">
+          <span class="detailTitle">Shipping</span>
+          <span class="detailInfo" [innerHTML]="(shippingFee?(shippingFee| currency:'EUR':true:'1.2-2'):'free')"></span>
+        </div>
+        <div class="detailRow">
+          <span class="detailTitle">total</span>
+          <span class="detailInfo" [innerHTML]="(subtotalFee + shippingFee)| currency:'EUR':true:'1.2-2'"></span>
+        </div>
+
+        <div class="selectPanel" (click)="SelectPayment()">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <span class="paymentText">
+
+            <div *ngIf="!paymentInfo">Select a Payment Method</div>
+            <div *ngIf="paymentInfo" class="paymentInfoParent">
+              <p>Payment Method</p>
+              <p class="paymentInfo" [innerHTML]="paymentInfo.payment"></p>
+            </div>
+          </span>
+
+        </div>
+        <div class="selectPanel" (click)="changeAddress()">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <div class="shippingText">
+            <div *ngIf="!shippingAddress">Select a Shipping Address</div>
+            <div *ngIf="!!shippingAddress">
+              <p>Shipping Address</p>
+              <p class="addressInfo" [innerHTML]="shippingAddress.shippingfirstName+' '+shippingAddress.shippinglastName"></p>
+              <p class="addressInfo" [innerHTML]="shippingAddress.shippingaddress1"></p>
+              <p *ngIf="!!shippingAddress.shippingaddress2" class="addressInfo" [innerHTML]="shippingAddress.shippingaddress2"></p>
+              <p class="addressInfo" [innerHTML]="shippingAddress.shippingcity+', '+shippingAddress.shippingpostCode"></p>
+            </div>
+          </div>
+        </div>
+        <div class="selectPanel" (click)="changeBillingAddress()">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <div class="shippingText">
+            <div *ngIf="!billingAddress">Select a Billing Address</div>
+            <div *ngIf="!!billingAddress">
+              <p>Billing Address</p>
+              <p class="addressInfo" [innerHTML]="billingAddress.billingfirstName+' '+billingAddress.billinglastName"></p>
+              <p class="addressInfo" [innerHTML]="billingAddress.billingaddress1"></p>
+              <p *ngIf="!!billingAddress.billingaddress2" class="addressInfo" [innerHTML]="billingAddress.billingaddress2"></p>
+              <p class="addressInfo" [innerHTML]="billingAddress.billingcity+', '+billingAddress.billingpostalcode"></p>
+            </div>
+          </div>
+        </div>
+        <button class="placeOrderButton" [disabled]="!paymentInfo||!shippingAddress||!billingAddress || cartList.length == 0" (click)="submit()">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

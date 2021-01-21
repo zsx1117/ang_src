@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar transparent>
+    <!--<ion-title>Login</ion-title>-->
+  </ion-navbar>
+</ion-header>
+<!--[style]="backStyle"-->
+<ion-content  [ngClass]="contentClass" [defaultImage]="defaultBackground" [lazyLoad]="backgroundImg" style="background-size: 100% 100%">
+  <div style="height: 100%;width:100%;" class="login" >
+    <div class="login-box" >
+      <dynamic-form  [questions]="questions" (submitForm)="submitForm($event)" [overHeight]="overHeight" [classSet]="classSet" style="height: 100%"></dynamic-form>
+    </div>
+  </div>
+</ion-content>
+
+
+

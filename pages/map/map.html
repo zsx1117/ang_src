@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+    <ion-title>Carte de nos Points de vente</ion-title>
+    <ion-buttons end style="margin-right: 5%">
+      <button ion-button (click)="goCart()">
+        <ion-icon name="ios-cart-outline" style="position: relative;font-weight: bold;font-size: 2em;" color="black">
+          <ion-badge style="position:absolute;font-weight: bold;top:-5px;left:9px;font-size: 9px" color="danger">2
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="MapPage">
+
+  <!--<ion-item>-->
+  <!--<ion-input id="autocomplete" type="text" name="title" placeholder="Enter Address"></ion-input>-->
+  <!--</ion-item>-->
+
+  <sebm-google-map id="map" [latitude]="map.lat" [longitude]="map.lng" [zoom]="map.zoom" [fitBounds]="mapBounds">
+
+    <sebm-google-map-marker [latitude]="map.lat" [longitude]="map.lng" >
+      <sebm-google-map-info-window>
+        <strong>My location</strong>
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+
+    <!--<sebm-google-map-marker *ngFor = "let store of stores" [latitude]="store['lat']" [longitude]="store['lng']" [label]="store['index']">-->
+      <!--<sebm-google-map-info-window>-->
+        <!--<strong [innerHTML]="store['name']"></strong>-->
+      <!--</sebm-google-map-info-window>-->
+    <!--</sebm-google-map-marker>-->
+    <marker-cluster [points]="stores" ></marker-cluster>
+  </sebm-google-map>
+</ion-content>
+
+  <content-drawer [options]="drawerOptions" class="contentDrawer">
+    <div class="content">
+      List of stores go here.
+      <div class="colorsmoke">
+        <div id="list2">
+          <ol>
+            <li>
+              <div *ngFor="let store of stores">
+              <p>
+                  <em>{{store["name"]}}</em>{{store["address"]}}
+              </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+</content-drawer>

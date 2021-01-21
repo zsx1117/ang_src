@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar transparent>
+    <ion-title>Email</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll" >
+  <div style="height: 100%;width:100%;position:absolute" class="mailCheck" >
+    <div class="mail-panel" >
+      <form [formGroup]="mailForm" style="height: 100%">
+      <div style="align-items: center; text-align: center;height: 100%;width: 85%;margin-left: auto;margin-right: auto">
+        <ion-list no-lines >
+          <ion-item>
+            <ion-label style="font-size:0.8em; padding-left:2.5vh !important;" floating>New Email</ion-label>
+            <ion-input type="text" class="form-control" id="email" [formControl]="email" autocapitalize="off"
+                       [class.invalid]="!email.valid && (email.dirty&& email.touched||submitAttempt )"></ion-input>
+          </ion-item>
+          <p *ngIf="email.hasError('required') && ((email.touched && email.dirty)|| submitAttempt)">Saisissez votre
+            adresse e-mail</p>
+          <p
+            *ngIf="email.hasError('invalidEmail') && ((email.touched && email.dirty) ||submitAttempt) && !email.hasError('required')">
+            Saisissez une adresse mail valide</p>
+
+
+          <ion-item>
+            <ion-label style="font-size:0.8em; padding-left:2.5vh !important;" floating>Password</ion-label>
+            <ion-input type="password" class="form-control" id="password" [formControl]="password"
+                       autocapitalize="off"
+                       [class.invalid]="!password.valid && (password.dirty && password.touched||submitAttempt )"></ion-input>
+          </ion-item>
+          <p *ngIf="password.hasError('required')  && (password.dirty && password.touched || submitAttempt)">Saisissez votre mot de passe</p>
+
+          <ion-item>
+            <ion-label style="text-align:right">TouchId</ion-label>
+            <ion-toggle color="dark" checked="true"></ion-toggle>
+          </ion-item>
+        </ion-list>
+        <button ion-button class="chang-btn" type="submit" (click)="changeEmail()">Change Email</button>
+
+      </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

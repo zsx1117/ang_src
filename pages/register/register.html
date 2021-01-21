@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar transparent>
+    <ion-title>new Register</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  [ngClass]="contentClass" [defaultImage]="defaultBackground" [lazyLoad]="backgroundImg" style="background-size: 100% 100%">
+    <div  style="height: 100%"  class="register-box">
+    <dynamic-form  [questions]="questions" (submitForm)="submitForm($event)" (sendList)="setList($event)" (sendForm)="setForm($event)"  [overHeight]="overHeight" [classSet]="classSet"></dynamic-form>
+      </div>
+</ion-content>
+
+

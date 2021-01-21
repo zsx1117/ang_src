@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end style="margin-right: 5%">
+    <button ion-button (click)="goCart()">
+      <ion-icon name="ios-cart-outline" style="position: relative;font-weight: bold;font-size: 2em;" color="black">
+        <ion-badge style="position:absolute;font-weight: bold;top:-5px;left:9px;font-size: 9px" color="danger">{{cartNumber?cartNumber:0}}
+        </ion-badge>
+      </ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-slides pager [autoplay]="3000" [loop]="true" style="height: 30%">
+    <ion-slide *ngFor="let picture of pictures">
+      <img [src]="picture"/>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card>
+    <img src='/assets/img/store/store.jpg'>
+    <div class="card-title">Le plus proche boutique:</div>
+    <div class="card-name" [innerHTML]="(store?store.name:'Loading...')"></div>
+    <div class="card-subtitle" [innerHTML]="'address: '+(store?store.address:'Loading...')"></div>
+  </ion-card>
+
+  <ion-card (click)="goProduct()">
+    <ion-avatar item-left>
+      <img src="/assets/img/store/PATISSERIES-Petits-choux.jpg">
+    </ion-avatar>
+    <div style="position: absolute;top: 36%;font-size: 1.1em;width: 100%;font-weight: bold;">NOS PRODUITS:</div>
+  </ion-card>
+
+  <ion-card style="background-color: green;color: white;">
+    <div>
+      <ion-icon name="person"></ion-icon>
+    </div>
+    <div>
+      Mon profile
+    </div>
+  </ion-card>
+
+
+</ion-content>

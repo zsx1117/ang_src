@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="130px" height="116px" viewBox="0 0 130 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>confirmation-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="115.2982 0.702 0.0002 0.702 0.0002 115.9999 115.2982 115.9999"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="confirmation-icon" transform="translate(0.000000, -1.000000)">
+            <g id="Group-3" transform="translate(0.000000, 0.298000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M3.6292,58.3509 C3.6292,28.5169 27.8152,4.3309 57.6492,4.3309 C87.4832,4.3309 111.6692,28.5169 111.6692,58.3509 C111.6692,88.1849 87.4832,112.3709 57.6492,112.3709 C27.8152,112.3709 3.6292,88.1849 3.6292,58.3509 M115.2982,58.3509 C115.2982,26.5119 89.4882,0.7019 57.6492,0.7019 C25.8102,0.7019 0.0002,26.5119 0.0002,58.3509 C0.0002,90.1899 25.8102,115.9999 57.6492,115.9999 C89.4882,115.9999 115.2982,90.1899 115.2982,58.3509" id="Fill-1" fill="#404041" mask="url(#mask-2)"></path>
+            </g>
+            <polyline id="Stroke-4" stroke="#61D395" stroke-width="10" points="28.213 57.3081 55.039 84.1341 125.872 13.3011"></polyline>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,63 @@
+.ios, .md {
+   .mailCheck {
+     .mail-panel {
+       border-radius: 5px;
+       opacity: 0.8;
+       width: 80%;
+       height: 80%;
+       background-color: rgba(0, 0, 0, 0.5);
+       padding: 3% 1% 5% 1%;
+       margin: 10% auto 20% auto;
+     }
+
+     .chang-btn{
+       margin-right: auto;
+       margin-left: auto;
+       overflow: hidden;
+       border: none;
+       margin-top: 50%;
+       line-height: 6.5vh;
+       font-size: 1.0em ;
+       border-radius: 10px;
+       width: 60% ;
+     }
+
+
+     .resend-btn{
+       margin-right: auto;
+       margin-left: auto;
+       overflow: hidden;
+       border: none;
+       line-height: 6.5vh;
+       font-size: 1.5em ;
+       border-radius: 10px;
+       width: 70% ;
+     }
+
+     ion-item {
+       background-color: transparent;
+       border-bottom: 3px;
+       box-shadow: none;
+     }
+     .item-inner {
+       border-bottom-color: #ffffff;
+       box-shadow: none;
+     }
+
+     .invalid {
+       border: 1px solid #ea6153;
+     }
+     ion-input, ion-select, ion-textarea {
+       background-color: #f2f2f2;
+       padding-left: 2.5vh;
+       border-radius: 5px;
+     }
+
+     p {
+       text-align: left;
+       font-size: 0.8em;
+       color: red;
+       margin-bottom: 0;
+     }
+   }
+ }

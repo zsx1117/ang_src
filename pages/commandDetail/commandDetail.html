@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Command Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="CommandDetail">
+  <div class="CommandDetailPanel">
+    <div class="CommandDetailAutoPanel">
+
+      <div class="CommandDetailDetailPanel">
+        <ion-row>
+          <ion-col col-6>Date de commande</ion-col>
+          <ion-col col-6>{{commandDetail.date}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>N° de commande</ion-col>
+          <ion-col col-6>{{commandDetail.number}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>Total de la commande</ion-col>
+          <ion-col col-6>{{(+commandDetail.total)| currency:'EUR':true:'1.2-2'}}</ion-col>
+        </ion-row>
+      </div>
+
+      <div class="productPanel">
+        <ion-item class="itemClass" *ngFor="let product of cartList">
+          <div class="imageStyle">
+            <img [defaultImage]="defaultImage" [lazyLoad]="product.image" class="picture"/>
+          </div>
+          <div style="display: inline-block;width: 70%;vertical-align: top;margin-left: 3%">
+            <div style="float: left">
+              <h3 class="productName" [innerHTML]="product.name"></h3>
+              <p class="priceClass" [innerHTML]="product.price | currency:'EUR':true:'1.2-2'"></p>
+              <div class="operationButton">
+                <span class="count">amount: {{product.quantity}}</span>
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+      <div class="CommandDetailDetailPanel">
+        <div class="detailRow">
+          <span class="detailTitle">Subtotal </span>
+          <span class="detailInfo" [innerHTML]="getSubTotalFee()| currency:'EUR':true:'1.2-2'"></span>
+        </div>
+        <div class="detailRow">
+          <span class="detailTitle">Shipping</span>
+          <span class="detailInfo" [innerHTML]="(shippingFee?(shippingFee| currency:'EUR':true:'1.2-2'):'free')"></span>
+        </div>
+        <div class="detailRow">
+          <span class="detailTitle">total</span>
+          <span class="detailInfo" [innerHTML]="(subtotalFee + shippingFee)| currency:'EUR':true:'1.2-2'"></span>
+        </div>
+
+        <div class="selectPanel">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <span class="paymentText">
+            <div class="paymentInfoParent">
+              <p>Payment Method</p>
+              <p class="paymentInfo" [innerHTML]="commandDetail.paymentInfo"></p>
+            </div>
+          </span>
+
+        </div>
+        <div class="selectPanel">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <div class="shippingText">
+            <div *ngIf="!!shippingAddress">
+              <p>Shipping Address</p>
+              <p class="addressInfo"
+                 [innerHTML]="shippingAddress.shippingfirstName+' '+shippingAddress.shippinglastName"></p>
+              <p class="addressInfo" [innerHTML]="shippingAddress.shippingaddress1"></p>
+              <p *ngIf="!!shippingAddress.shippingaddress2" class="addressInfo"
+                 [innerHTML]="shippingAddress.shippingaddress2"></p>
+              <p class="addressInfo"
+                 [innerHTML]="shippingAddress.shippingcity+', '+shippingAddress.shippingpostCode"></p>
+            </div>
+          </div>
+        </div>
+        <div class="selectPanel">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <div class="shippingText">
+            <div *ngIf="!!billingAddress">
+              <p>Billing Address</p>
+              <p class="addressInfo"
+                 [innerHTML]="billingAddress.billingfirstName+' '+billingAddress.billinglastName"></p>
+              <p class="addressInfo" [innerHTML]="billingAddress.billingaddress1"></p>
+              <p *ngIf="!!billingAddress.billingaddress2" class="addressInfo"
+                 [innerHTML]="billingAddress.billingaddress2"></p>
+              <p class="addressInfo" [innerHTML]="billingAddress.billingcity+', '+billingAddress.billingpostalcode"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

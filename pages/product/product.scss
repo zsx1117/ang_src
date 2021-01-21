@@ -1,0 +1,55 @@
+.ios, .md {
+  .products {
+
+    ion-item {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 10px;
+    }
+    .picture{
+      float: left;
+      margin: 10px 10px 0 0;
+      height: 70px;
+      width: 70px;
+      max-height: 130px;
+      max-width: 130px;
+    }
+
+    .itemClass {
+      padding: .375em .375em 0 !important;
+      width: 100%;
+      opacity: 1;
+    }
+    .imageStyle {
+      display: inline-block;
+      position: relative;
+      width: 28%;
+      height: 0;
+      padding-bottom: 28%;
+      overflow: hidden;
+      //background-color: #ddebf4;
+    }
+    .productName{
+      font-size: .80625em;
+      margin-top: .25em;
+      margin-bottom: .5em;
+      font-family: bt_mono-Bold,monospace;
+    }
+    .detailClass{
+      word-break:break-all;
+      white-space:normal;
+      margin-bottom: .83333em;
+      font-size: .6em;
+      color: #818284;
+      margin-top: .25em;
+      text-align: start;
+    }
+    .priceClass{
+      vertical-align: bottom;
+      font-size: .75em;
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+
+  }
+}

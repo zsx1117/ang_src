@@ -1,0 +1,53 @@
+<div [formGroup]="form">
+  <!--<label [attr.for]="question.key">{{question.label}}</label>-->
+
+  <div [ngSwitch]="question.controlType">
+
+    <ion-item *ngSwitchCase="'textbox'" [ngClass]="classSet['textbox']">
+      <ion-label [ngClass]="classSet['inputLabelClass']" floating [attr.for]="question.key" [innerHTML]="question.label"></ion-label>
+      <ion-input [maxlength]="question.maxlength" class="form-control" [formControlName]="question.key" [minlength]="question.minlength"
+                 [id]="question.key" [type]="question.type" [value]="question.value" [class.invalid]="!form.controls[question.key].valid && ( form.controls[question.key].touched||submitAttempt )" ></ion-input>
+    </ion-item>
+
+    <ion-item *ngSwitchCase="'dropdown'" [ngClass]="classSet['dropdownClass']">
+      <ion-label [innerHTML]="question.label"></ion-label>
+      <ion-select class="form-control" [id]="question.key"  [formControlName]="question.key">
+        <ion-option *ngFor="let opt of question.options" [value]="opt.key" [innerHTML]="opt.value"></ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item *ngSwitchCase="'dataTime'" [ngClass]="classSet['dataTimeClass']">
+      <ion-label [innerHTML]="question.label"></ion-label>
+      <ion-datetime [id]="question.key" [formControlName]="question.key" [displayFormat]="question.displayFormat" [max]="question.max"  >
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item *ngSwitchCase="'toggle'">
+      <ion-label style="text-align:right">TouchId</ion-label>
+      <ion-toggle [id]="question.key" [formControlName]="question.key" [color]="question.color" ></ion-toggle>
+    </ion-item>
+
+    <div *ngSwitchCase="'captcha'" [ngClass]="classSet['captchaClass']">
+      <div style="margin-left:auto;margin-right:auto;transform:scale(0.88);-webkit-transform:scale(0.88);transform-origin:0 0;-webkit-transform-origin:0 0;">
+        <re-captcha
+      [formControlName]="question.key"
+          siteKey="6LdBBxsUAAAAAIeffsnUbYFam1oq366YOf0l0TO-" data-size="normal"
+        ></re-captcha>
+      </div>
+    </div>
+
+    <!--<select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">-->
+      <!--<option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>-->
+    <!--</select>-->
+
+  </div>
+  <div *ngIf="form.controls[question.key].touched||submitAttempt">
+    <div *ngFor="let check of question.valideCheck" >
+      <p *ngIf="form.controls[question.key].hasError(check)" [innerHTML]="question.label+' '+errorMessage(check)"></p>
+    </div>
+    <p *ngIf = "form.hasError('mismatchedPasswords')&&question.key=='confirmPassword'">Passwords do not match.</p>
+  </div>
+
+  <!--<div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>-->
+</div>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Favourite</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end style="margin-right: 5%">
+      <button ion-button (click)="goCart()">
+        <ion-icon #cartIcon name="ios-cart-outline" style="position: relative;font-weight: bold;font-size: 2em;" color="black">
+          <ion-badge style="position:absolute;font-weight: bold;top:-5px;left:9px;font-size: 9px" color="danger">{{cartNumber?cartNumber:0}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="products">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      refreshingSpinner="crescent"
+    >
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item *ngFor="let product of products"  class="itemClass">
+      <div class="imageStyle">
+        <img [defaultImage]="defaultImage" [lazyLoad]="product.image" />
+      </div>
+      <div style="display: inline-block;width: 70%;vertical-align: top;margin-left: 3%;">
+        <div style="float: left;width: 100%">
+          <h4 class="productName" [innerHTML]="product.name"></h4>
+          <div class="detailClass" [innerHTML]="product.description"></div>
+          <div style="margin-top: .25em;">
+            <p class="priceClass" [innerHTML]="product.price | currency:'EUR':true:'1.2-2'"></p>
+            <p (click)="remove(product)" style="display: inline-block;font-size: 2.3rem;float: right;margin-right: 5%;color: #d47032;">
+              Remove
+            </p>
+            <button ion-button outline style="display: inline-block;float: right;margin-right: 5%;font-size: 2.3rem" (click)="addCart($event,product)">
+              <ion-icon  name="add" style="font-size: 0.95em;"></ion-icon>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

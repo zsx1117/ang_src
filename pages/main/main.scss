@@ -1,0 +1,51 @@
+
+.ios, .md {
+  page-main {
+
+    .buttonMain{
+      position: relative;
+      padding-left: 16px;
+      font-size: 1.7rem;
+      color: darken(#FFFFFF,20);
+      background-color: darken(#3E454C, 10);
+    }
+
+
+
+    .item-ios.activated{
+      background-color: lighten(#FFFFFF, 10);
+    }
+
+
+    .item-md.activated{
+      background-color: lighten(#FFFFFF, 10);
+    }
+
+    .heading-item
+    {
+      height: 100%;
+      background-color: darken(#3E454C, 10);
+    }
+
+
+    .bc{
+      background-color: darken(#3E454C, 10);
+    }
+    .greeting{
+      color: #FFFFFF;
+    }
+
+    .icon-head{
+      margin: auto;
+      width: 20vw ;
+      height: 20vw ;
+      border: 1px solid #3B3477;
+    }
+
+    .message
+    {
+      color: darken(#FFFFFF, 40);
+    }
+  }
+
+}

@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Payment
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  class="payment no-scroll" style="background-color: #d1d2d3">
+  <div style="margin:0.375em">
+    <div class="paymentInner">
+      <form id="my-sample-form" (ngSubmit)="onSubmit()">
+        <label class="labelField" for="card-number">
+          <span [ngClass]="numberLabelShow">Card Number</span>
+          <div id="card-number" class="inputCardNumber"></div>
+          <img class="paymentMethod" [src]="cardSrc">
+          <div [ngClass]="numberErrorShow"></div>
+        </label>
+        <label class="labelField">
+          <span [ngClass]="dateLabelShow">Expiration Date</span>
+          <div id="expiration-date" class="inputCardNumber"></div>
+          <div [ngClass]="dateErrorShow"></div>
+        </label>
+        <label class="labelField">
+          <span [ngClass]="cvvLabelShow">CVV</span>
+          <div id="cvv" class="inputCardNumber"></div>
+          <div [ngClass]="cvvErrorShow"></div>
+          <img src="/assets/img/payment/card.svg" class="cardSvg">
+        </label>
+        <button #button id="my-submit" class="cardBtn" type="submit">Add Credit Card</button>
+      </form>
+    <div class="orFrame">
+      <span class="orsPan">or</span>
+    </div>
+      <button class="cardBtn payPalButton " #paypalButton id="paypal-button">
+        <img class="payPalSvg" src="/assets/img/payment/paypal.svg">
+      </button>
+    </div>
+
+  </div>
+
+
+</ion-content>

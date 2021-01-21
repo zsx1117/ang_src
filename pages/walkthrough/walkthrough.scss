@@ -1,0 +1,118 @@
+$auth-color: #FFFFFF;
+$theme-color-1: #387ef5;
+$theme-color-2: #FF4C4C;
+$theme-color-3: #3E454C;
+$auth-login-btn-bg: rgba($theme-color-1, .8);
+$auth-signup-btn-bg: rgba($theme-color-2, .8);
+
+.ios, .md {
+
+
+  .no-scroll .scroll-content{
+    overflow: hidden;
+  }
+  .item-md.item-block .item-inner {
+    padding-right: 0;
+    padding-left: 0;
+    border-bottom: 0;
+  }
+
+  .item-ios {
+    padding-left: 0;
+    border-radius: 0;
+    font-size: 1.7rem;
+    color: #000;
+    transition: background-color 200ms linear;
+  }
+
+  .item-md{
+    padding-left: 0;
+    border-radius: 0;
+    font-size: 1.7rem;
+    color: #000;
+    transition: background-color 200ms linear;
+  }
+
+  .image-card-contain {
+    overflow: hidden;
+    height: 55%;
+    text-align: center;
+    background-color: transparent;
+    padding-left: 0;
+  }
+
+  .label-ios {
+    margin: 0 0 0 0;
+  }
+
+  .label-md {
+    margin: 0 0 0 0;
+  }
+
+  .item-ios.item-block .item-inner {
+    padding-right: 0;
+    border-bottom: none;
+    padding-left: 0;
+  }
+
+  .p-tag{
+    margin: 0 0 0 0;
+    text-align: center;
+  }
+
+  .label-B {
+
+    display: inline-block;
+    color: #90939a;
+    font-size: 3vh;
+    font-weight: bold;
+  }
+
+  .fbcolor {
+    color: #3B3477;
+    font-size: 3.6vh;
+  }
+  .gglcolor {
+    color: rgba(255, 76, 76, 0.8);
+    font-size: 3.6vh;
+  }
+  .twlcolor{
+    color: blueviolet;
+    font-size: 3.6vh;
+  }
+
+  .login1 {
+    padding: 0 1em;
+    height: 2.8em;
+    border-radius: 4px;
+    overflow: hidden;
+    border: none;
+    display: block;
+    line-height: 12.5vh;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    color: $auth-color;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: $auth-login-btn-bg;
+  }
+
+  .sign-up {
+    padding: 0 1em;
+    height: 2.8em;
+    border-radius: 4px;
+    overflow: hidden;
+    border: none;
+    display: block;
+    line-height: 12.5vh;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    color: $auth-color;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: $auth-signup-btn-bg;
+  }
+
+  }

@@ -1,0 +1,33 @@
+.commands{
+  .commandItem{
+    margin-bottom: 1.3rem;
+    padding: 0.5rem 0.9rem;
+    font-size :1.5em;
+    line-height: 1.35;
+  }
+
+  .box-inner{
+    padding:0 2.5rem 0 0;
+    border-radius: 0.4rem;
+    position:relative;
+    box-sizing:border-box;
+  }
+
+  .arrow{
+    position: absolute;
+    right: 1.5rem;
+    top:50%;
+    margin-top:-0.7rem;
+    width:1.1rem;
+    height: 1.5rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+ .CommandDetail {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1.07692em;
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,43 @@
+<ion-header>
+
+</ion-header>
+<ion-content [style]="backStyle"  class="no-scroll" >
+  <div>
+    <label>
+      {{ 'HOME.SELECT' | translate }}
+      <select #langSelect (change)="translate.use(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+      </select>
+    </label>
+  </div>
+
+
+  <ion-item class="image-card-contain">
+    <ion-card class=" col-center">
+      <img src="../../assets/img/logo.png"/>
+    </ion-card>
+  </ion-item>
+  <div (click)="register2()">register fack</div>
+  <button ion-button class="login1" (click)="login()">
+  {{ 'walkthrough.login' | translate }}
+  </button>
+  <button ion-button class="sign-up" (click)="register()">
+ {{ 'walkthrough.register' | translate }}
+  </button>
+  <ion-list>
+    <p class="p-tag">
+      <ion-label class="label-B">se connecter via</ion-label>
+      <ion-label class="fbcolor label-B" (click)="fbLogin()">Facebook</ion-label>
+    </p>
+    <p class="p-tag">
+      <ion-label class="label-B">se connecter via</ion-label>
+      <ion-label class="gglcolor label-B" (click)="googleLogin()">Google+</ion-label>
+    </p>
+    <p class="p-tag">
+      <ion-label class="label-B">se connecter via</ion-label>
+      <ion-label class="twlcolor label-B" (click)="twitterLogin()">Twitter</ion-label>
+    </p>
+
+    <!--<p (click)="logout()" >logout</p>-->
+  </ion-list>
+</ion-content>

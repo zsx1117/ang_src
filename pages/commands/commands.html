@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Commands</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end style="margin-right: 5%">
+      <button ion-button (click)="goCart()">
+        <ion-icon #cartIcon name="ios-cart-outline" style="position: relative;font-weight: bold;font-size: 2em;"
+                  color="black">
+          <ion-badge style="position:absolute;font-weight: bold;top:-5px;left:9px;font-size: 9px" color="danger">
+            {{cartNumber?cartNumber:0}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="commands">
+  <ion-list>
+    <ion-item *ngFor="let command of commands" class="commandItem">
+      <div class="box-inner">
+        <img src="/assets/img/cart/arrow.svg" width="10" role="presentation" class="arrow">
+        <div class="CommandDetail">
+          <ion-row>
+            <ion-col col-4 style="vertical-align: middle;float: none;">
+              <img [defaultImage]="defaultImage" [lazyLoad]="command.image"/>
+            </ion-col>
+            <ion-col col-8>
+              <div style="width: 100%">
+                <span style="font-weight: 700!important; ">
+                  {{command.title}}
+                </span>
+              </div>
+              <div style="width: 100%">
+              <span style="font-size: 1.3rem!important;line-height: 1.4!important;">
+                {{command.date}}
+              </span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

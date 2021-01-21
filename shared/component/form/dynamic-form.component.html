@@ -1,0 +1,17 @@
+<div style="height: 100%" >
+  <form #myForm="ngForm" (ngSubmit)="onSubmit()" [formGroup]="form" style="height: 100%;position: relative;" >
+    <div [ngClass]="classSet['listPositionClass']">
+    <ion-list #list no-lines [ngClass]="classSet['listClass']">
+
+    <div *ngFor="let question of questions" >
+      <df-question *ngIf="question.show" [question]="question" [submitAttempt]="submitAttempt" [classSet]="classSet"  [form]="form"></df-question>
+    </div>
+
+    <div [ngClass]="classSet['submitPosition']"  [ngStyle]="stylePosition">
+      <button ion-button [ngClass]="classSet['submitClass']"  type="submit" [ngStyle]="styleButton">Save</button>
+    </div>
+    </ion-list>
+    </div>
+  </form>
+
+</div>

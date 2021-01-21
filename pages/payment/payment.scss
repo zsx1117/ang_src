@@ -1,0 +1,186 @@
+.payment {
+  font-family: Avenir Next W01\ 400, Avenir Next, Helvetica Neue, Helvetica, sans-serif;
+  .paymentInner {
+    position: relative;
+    padding: 1em 1.25em .875em;
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+  }
+  .labelField {
+    padding: .5em 0;
+    display: block;
+    margin-top: -1px;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #dee2e5;
+    border-bottom: 1px solid #dee2e5;
+    transition: border-color .3s ease-in-out;
+  }
+
+  .labelField.active {
+    background-color: #eee;
+  }
+
+  .showNotLabel {
+    color: #6e787f;
+    font-size: 0.7em;
+    position: absolute;
+    left: 0.75em;
+    top: 10px;
+    display: block;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 6px, 0);
+    transform: translate3d(0, 6px, 0);
+    transition: transform 111ms ease-out, opacity 111ms ease-out, -webkit-transform 111ms ease-out;
+  }
+  .showLabel {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .showNotError {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #d0021b;
+    height: 10px;
+    width: 100%;
+    -webkit-transform: translateY(1.25em);
+    -ms-transform: translateY(1.25em);
+    transform: translateY(1.25em);
+  }
+
+  .showError {
+    -webkit-animation: invalidBarAnimation___3iZKF .2s linear both;
+    animation: invalidBarAnimation___3iZKF .2s linear both;
+  }
+
+  @keyframes invalidBarAnimation___3iZKF {
+    0% {
+      -webkit-transform: translateY(.875em);
+      transform: translateY(.875em)
+    }
+    9% {
+      -webkit-transform: translateY(.3125em);
+      transform: translateY(.3125em)
+    }
+    20% {
+      -webkit-transform: translateY(.5em);
+      transform: translateY(.5em)
+    }
+    to {
+      -webkit-transform: translateY(.5em);
+      transform: translateY(.5em)
+    }
+  }
+
+  .orFrame {
+    margin-top: .875em;
+    margin-bottom: .875em;
+  }
+
+  .orsPan {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: .8125em;
+    text-align: center;
+    text-transform: uppercase
+  }
+  .orsPan:after, .orsPan:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed #ccc
+  }
+  .orsPan:before {
+    margin-right: .625em
+  }
+  .orsPan:after {
+    margin-left: .625em
+  }
+  .payPalButton {
+    background-color: #0079c1 !important;
+  }
+
+  .payPalSvg {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+  }
+  .cardSvg {
+    width: 14%;
+    position: absolute;
+    top: 50%;
+    right: .625em;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .paymentMethod {
+    width: 11%;
+    position: absolute;
+    top: 50%;
+    right: .625em;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+  .inputCardNumber {
+    display: block;
+    height: 1.875em;
+    margin: .75em 0 0;
+    padding: 0 .875em;
+    width: 100%;
+    outline: 0;
+    border: none;
+    background: transparent none;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none;
+  }
+  .bdColor {
+    margin-top: 0;
+    background-color: #eee;
+  }
+
+  .cardBtn {
+    margin-top: 1.55556em;
+    transition: background-color .3s ease;
+    position: relative;
+    display: inline-block;
+    padding-right: .75em;
+    padding-left: .75em;
+    height: 3.07692em;
+    font-size: .925em;
+    text-align: center;
+    text-decoration: none;
+    line-height: 3.23077em;
+    color: #fff;
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 2px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #818284;
+    border: none;
+  }
+}
+

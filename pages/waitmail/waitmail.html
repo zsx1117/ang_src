@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Check Mail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="waitMail">
+  <ion-slides style="height: 74%" *ngFor="let page of pages">
+  <ion-slide>
+    <img [defaultImage]="defaultImage" [lazyLoad]="page.image" class="slide-image"/>
+    <h2 class="slide-title" [innerHTML]="page.title"></h2>
+    <p [innerHTML]="page.description"></p>
+  </ion-slide>
+    </ion-slides>
+<div style="text-align: center;width: 100%">
+  <button ion-button icon-right color="primary" [disabled]="hasLogin||resendBlockOther" (click)="login()" [innerHTML]="(hasLogin?'wait '+loginTimer+' s':'login in')">
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+</div>
+
+
+  <div style="width: 100% ">
+
+    <button ion-button icon-right style="float:left;margin-left:5%"  color="primary" [disabled]="resendBlockOther || loginBlockOther" (click)="changeEmail()">
+      change
+    </button>
+
+
+    <button ion-button icon-right style="float:right;margin-right:5%"  color="primary"  [disabled]="hasSend||loginBlockOther" (click)="resend()" [innerHTML]="(hasSend?'wait '+resendTimer+' s':'Resend')" >
+    </button>
+  </div>
+
+</ion-content>

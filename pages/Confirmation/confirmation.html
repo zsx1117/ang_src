@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Confirmation
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="confirmation no-scroll" style="background-color: #d1d2d3">
+  <div class="confirmationPanel">
+    <div class="confirmationAutoPanel">
+      <div class="orderNumberPanel">
+        <img class="truePic" src="/assets/img/confirmation/checkTrue.svg" width="65" role="presentation">
+        <h2 class="textClass">Thanks for your order!</h2>
+        <h2 class="textClass" [innerHTML]="'ORDER #: ' + orderNumber"></h2>
+      </div>
+      <div class="cartDetailPanel">
+        <div class="detailRow">
+          <span class="detailTitle">Subtotal </span>
+          <span class="detailInfo" [innerHTML]="fee.subTotalFee| currency:'EUR':true:'1.2-2'"></span>
+        </div>
+        <div class="detailRow">
+          <span class="detailTitle">Shipping</span>
+          <span class="detailInfo" [innerHTML]="fee.shippingFee?(shippingFee| currency:'EUR':true:'1.2-2'):'free'"></span>
+        </div>
+        <div class="detailRow">
+          <span class="detailTitle">total</span>
+          <span class="detailInfo" [innerHTML]="fee.totalFee| currency:'EUR':true:'1.2-2'"></span>
+        </div>
+
+        <div class="selectPanel">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <div class="shippingText">
+            <p>Shipping Address</p>
+            <p class="addressInfo" [innerHTML]="shippingAddress.shippingfirstName+' '+shippingAddress.shippinglastName"></p>
+            <p class="addressInfo" [innerHTML]="shippingAddress.shippingaddress1"></p>
+            <p *ngIf="shippingAddress&& !!shippingAddress['shippingaddress2']" class="addressInfo" [innerHTML]="shippingAddress['shippingaddress2']"></p>
+            <p class="addressInfo" [innerHTML]="shippingAddress.shippingcity+', '+shippingAddress.shippingpostalcode"></p>
+          </div>
+        </div>
+        <div class="selectPanel">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <span class="paymentText">
+            <div class="paymentInfoParent">
+              <p>Payment Method</p>
+              <p class="paymentInfo" [innerHTML]="paymentInfo.payment"></p>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div>
+        <h2 class="contactTitle">Need Help? Send us a note!</h2>
+        <button class="buttonContact" (click)="goContact()">Contact Us</button>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

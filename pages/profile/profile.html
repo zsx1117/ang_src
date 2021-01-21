@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end style="margin-right: 5%">
+      <button ion-button (click)="goCart()">
+        <ion-icon #cartIcon name="ios-cart-outline" style="position: relative;font-weight: bold;font-size: 2em;" color="black">
+          <ion-badge style="position:absolute;font-weight: bold;top:-5px;left:9px;font-size: 9px" color="danger">{{cartNumber?cartNumber:'0'}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="profile">
+  <div style="height:20vh">
+    <ion-item class="heading-item">
+      <ion-avatar align-items-center>
+        <img class="icon-head" [src]="userInfo.pictureURL?userInfo.pictureURL : 'http://media.lemeilleurjobdete.com/uploads/3748/profil-1436023040.jpg'">
+      </ion-avatar>
+    </ion-item>
+  </div>
+
+</ion-content>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Shipping Address</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="shippingAddress">
+  <div class="shipPanel">
+    <div class="shipAutoPanel">
+      <div>
+        <form [formGroup]="shipForm" (ngSubmit)=" onSubmit(shipForm.value)">
+          <div class="labelStyle" style="width: 49%">
+            <ion-label [ngClass]="shipForm.controls['shippingfirstName'].value?'labelShowTitle labelTitle':'labelTitle'">First Name</ion-label>
+            <ion-input class="inputClass" (focus)="addBd($event)" (blur)="blurBd($event)" formControlName="shippingfirstName" type="text" [ngClass]="shipForm.controls['shippingfirstName']['status']=='INVALID'&&submited?'showInputError':'inputClass'" placeholder="First Name" ></ion-input>
+          </div>
+          <div class="labelStyle" style="width: 49%">
+            <label [ngClass]="shipForm.controls['shippinglastName'].value?'labelShowTitle labelTitle':'labelTitle'">Last Name</label>
+            <ion-input type="text" (focus)="addBd($event)" (blur)="blurBd($event)" formControlName="shippinglastName" placeholder="Last Name" [ngClass]="shipForm.controls['shippinglastName']['status']=='INVALID'&&submited?'showInputError':'inputClass'"></ion-input>
+          </div>
+          <label style="width: 100%" class="labelStyle">
+            <label [ngClass]="shipForm.controls['shippingaddress1'].value?'labelShowTitle labelTitle':'labelTitle'">Address Line1</label>
+            <ion-input type="text" (focus)="addBd($event)" (blur)="blurBd($event)" formControlName="shippingaddress1" placeholder="Address Line1" [ngClass]="shipForm.controls['shippingaddress1']['status']=='INVALID'&&submited?'showInputError':'inputClass'"></ion-input>
+          </label>
+          <label style="width: 100%" class="labelStyle">
+            <label [ngClass]="shipForm.controls['shippingaddress2'].value?'labelShowTitle labelTitle':'labelTitle'">Address Line2</label>
+            <ion-input type="text" (focus)="addBd($event)" (blur)="blurBd($event)" formControlName="shippingaddress2" placeholder="Address Line2" [ngClass]="shipForm.controls['shippingaddress2']['status']=='INVALID'&&submited?'showInputError':'inputClass'"></ion-input>
+          </label>
+          <label style="width: 100%" class="labelStyle">
+            <label [ngClass]="shipForm.controls['shippingpostalcode'].value?'labelShowTitle labelTitle':'labelTitle'">Postal code</label>
+            <ion-input type="text" (focus)="addBd($event)" (blur)="blurBd($event)" [maxlength]="5" formControlName="shippingpostalcode" placeholder="Postal code" [ngClass]="shipForm.controls['shippingpostalcode']['status']=='INVALID'&&submited?'showInputError':'inputClass'"></ion-input>
+          </label>
+          <label style="width: 100%" class="labelStyle">
+            <label [ngClass]="shipForm.controls['shippingcity'].value?'labelShowTitle labelTitle':'labelTitle'">City</label>
+            <ion-input type="text" (focus)="addBd($event)" (blur)="blurBd($event)" formControlName="shippingcity" placeholder="City" [ngClass]="shipForm.controls['shippingcity']['status']=='INVALID'&&submited?'showInputError':'inputClass'"></ion-input>
+          </label>
+          <div>
+            <button class='shipAdd'  type='submit'>Add New Address</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="orPosition">
+        <span class="orClass">or</span>
+      </div>
+
+      <div>
+        <div *ngFor="let address of shippingList" class="addressPanel" (click)="sendAddress(address)">
+          <img src="/assets/img/cart/arrow.svg" width="10" role="presentation">
+          <div class="shippingInfo">
+            <p>Shipping Address</p>
+            <p class="textClass" [innerHTML]="address.shippingfirstName+' '+address.shippinglastName"></p>
+            <p class="textClass" [innerHTML]="address.shippingaddress1"></p>
+            <p *ngIf="address.shippingaddress2" class="textClass" [innerHTML]="address.shippingaddress2"></p>
+            <p class="textClass" [innerHTML]="address.shippingcity+', '+address.shippingpostalcode"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,158 @@
+.confirmation{
+  font-family: Avenir Next W01\ 400, Avenir Next, Helvetica Neue, Helvetica, sans-serif;
+  background-color: #d1d2d3;
+  .confirmationPanel{
+    padding-top: .375em;
+    width: 97%;
+    height: 88%;
+    margin: auto;
+  }
+  .confirmationAutoPanel{
+    padding-top: 1.0625em;
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+    padding-bottom: .375em;
+  }
+
+  .orderNumberPanel{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .125em;
+  }
+
+  .truePic{
+    transform: translate(.125em);
+  }
+
+  .textClass{
+    margin-top: 1.06667em;
+    margin-bottom: .46667em;
+    font-size: .90625em;
+    font-family: bt_mono-Bold,monospace;
+    font-weight:bold
+  }
+.cartDetailPanel{
+  padding: .125em .75em;
+  margin-right: .375em;
+  margin-top: .25em;
+  margin-left: .375em;
+  border: 1px dashed #ccc;
+}
+  .detailRow {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    line-height: 1.55;
+    text-transform: uppercase;
+  }
+  .detailRow:nth-child(2) {
+    border-bottom: 1px solid #ccc
+  }
+
+  .detailRow:nth-child(3) {
+    padding-top: .25em;
+    margin-bottom: .25em
+  }
+
+  .detailRow:nth-child(3) .detailTitle {
+    font-size: .9375em;
+    font-family: bt_mono-Heavy, monospace
+  }
+  .detailRow:nth-child(3) .detailInfo {
+    font-weight: 700
+  }
+
+  .detailTitle {
+    font-size: .75em;
+    font-family: bt_mono-Medium, monospace;
+  }
+  .detailInfo {
+    font-size: .8125em;
+  }
+
+  .selectPanel p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .selectPanel {
+    font-family: bt_mono-Medium, monospace;
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .625em;
+    width: 100%;
+    margin-bottom: .625em;
+    font-size: .9125em;
+    border: 1px solid #707070;
+    background-color: #fff;
+    transition: background-color .3s ease;
+    color: #404041;
+    text-decoration: none;
+  }
+
+  .shippingText {
+    padding-top: .53846em;
+    padding-bottom: .53846em;
+    padding-left: 1.07692em;
+    flex-grow: 1;
+  }
+
+  .paymentText {
+    flex-grow: 1;
+    line-height: 3.0em;
+    text-align: left;
+    padding-left: 1.07692em;
+  }
+
+  .paymentInfo{
+    font-family: Avenir Next,Helvetica Neue,Helvetica,sans-serif;
+    font-size: .91667em;
+    color: #707070;
+  }
+
+  .paymentInfoParent{
+    padding-top: .25em;
+    padding-bottom: .25em;
+    line-height: 1.25!important;
+  }
+  .contactTitle{
+    margin-top: .76923em;
+    font-size: .8125em;
+    text-align: center;
+    margin-bottom: .46667em;
+    font-family: bt_mono-Bold,monospace;
+    font-weight:bold;
+  }
+
+  .buttonContact{
+    color: #3d3d42;
+    border: 1px solid #8f8f9c;
+    background-color: #ededee;
+    display: block;
+    width: 88%;
+    height: 2.92308em;
+    line-height: 2.92308em;
+    margin-top: .46154em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: .8125em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background-color .3s ease;
+  }
+
+
+
+
+}
